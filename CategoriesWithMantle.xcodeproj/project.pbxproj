@@ -17,8 +17,6 @@
 		5ABA44841AF7D375004FFDBD /* CategoriesWithMantleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABA44831AF7D375004FFDBD /* CategoriesWithMantleTests.m */; };
 		5ABA44931AF80BB8004FFDBD /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABA44921AF80BB8004FFDBD /* CategoriesTableViewController.m */; };
 		5ABA44941AF80BB8004FFDBD /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABA44921AF80BB8004FFDBD /* CategoriesTableViewController.m */; };
-		5ABA44971AF80C02004FFDBD /* SubcategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABA44961AF80C02004FFDBD /* SubcategoryViewController.m */; };
-		5ABA44981AF80C02004FFDBD /* SubcategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABA44961AF80C02004FFDBD /* SubcategoryViewController.m */; };
 		5ABA44A51AF81A58004FFDBD /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABA44A41AF81A58004FFDBD /* Product.m */; };
 		5ABA44A61AF81A58004FFDBD /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABA44A41AF81A58004FFDBD /* Product.m */; };
 /* End PBXBuildFile section */
@@ -50,8 +48,6 @@
 		5ABA44831AF7D375004FFDBD /* CategoriesWithMantleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesWithMantleTests.m; sourceTree = "<group>"; };
 		5ABA44911AF80BB8004FFDBD /* CategoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesTableViewController.h; sourceTree = "<group>"; };
 		5ABA44921AF80BB8004FFDBD /* CategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesTableViewController.m; sourceTree = "<group>"; };
-		5ABA44951AF80C02004FFDBD /* SubcategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubcategoryViewController.h; sourceTree = "<group>"; };
-		5ABA44961AF80C02004FFDBD /* SubcategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubcategoryViewController.m; sourceTree = "<group>"; };
 		5ABA44A31AF81A58004FFDBD /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		5ABA44A41AF81A58004FFDBD /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		6A4B8938F3FD2B9C4104A007 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,8 +149,6 @@
 			children = (
 				5ABA44911AF80BB8004FFDBD /* CategoriesTableViewController.h */,
 				5ABA44921AF80BB8004FFDBD /* CategoriesTableViewController.m */,
-				5ABA44951AF80C02004FFDBD /* SubcategoryViewController.h */,
-				5ABA44961AF80C02004FFDBD /* SubcategoryViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -323,7 +317,6 @@
 				5ABA44671AF7D374004FFDBD /* main.m in Sources */,
 				5ABA44A51AF81A58004FFDBD /* Product.m in Sources */,
 				5ABA44931AF80BB8004FFDBD /* CategoriesTableViewController.m in Sources */,
-				5ABA44971AF80C02004FFDBD /* SubcategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +324,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ABA44981AF80C02004FFDBD /* SubcategoryViewController.m in Sources */,
 				5ABA44A61AF81A58004FFDBD /* Product.m in Sources */,
 				5ABA44841AF7D375004FFDBD /* CategoriesWithMantleTests.m in Sources */,
 				5ABA44941AF80BB8004FFDBD /* CategoriesTableViewController.m in Sources */,

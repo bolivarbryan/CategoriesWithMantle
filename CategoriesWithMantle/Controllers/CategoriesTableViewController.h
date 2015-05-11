@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Product.h"
 
 @interface CategoriesTableViewController : UITableViewController
-
+@property (nonatomic, strong) Product * selectedProduct;
 @end

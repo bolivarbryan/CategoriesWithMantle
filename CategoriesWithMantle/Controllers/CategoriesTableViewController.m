@@ -8,12 +8,9 @@
 
 #import "CategoriesTableViewController.h"
 #import <AFNetworking/AFNetworking.h>
-#import "Product.h"
-#import "SubcategoryViewController.h"
 
 @interface CategoriesTableViewController (){
     NSMutableArray * products;
-    Product *selectedProduct;
 }
 
 @end
@@ -22,13 +19,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://www.kbapi.co/g/TaOuEQl2.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray * productsJSON = [[responseObject objectForKey:@"data"] objectForKey: @"Category"];
-        [self parseProductsJSONArray:productsJSON];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
+    if (self.selectedProduct !=  Nil){
+        self.title = self.selectedProduct.categoryName;
+        products = [NSMutableArray arrayWithArray:self.selectedProduct.subcategories];
+    }else{
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager GET:@"http://www.kbapi.co/g/TaOuEQl2.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSArray * productsJSON = [[responseObject objectForKey:@"data"] objectForKey: @"Category"];
+            [self parseProductsJSONArray:productsJSON];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+    }
+    
 }
 
 -(void)parseProductsJSONArray:(NSArray *)productsJSON{
@@ -75,15 +78,15 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    selectedProduct = [[Product alloc] init];
-    selectedProduct.categoryName = [[products objectAtIndex:indexPath.row] objectForKey:@"categoryName"];
-    selectedProduct.subcategories = [[products objectAtIndex:indexPath.row] objectForKey:@"subcategories"];
+    self.selectedProduct = [[Product alloc] init];
+    self.selectedProduct.categoryName = [[products objectAtIndex:indexPath.row] objectForKey:@"categoryName"];
+    self.selectedProduct.subcategories = [[products objectAtIndex:indexPath.row] objectForKey:@"subcategories"];
     [self performSegueWithIdentifier:@"productDetailsSegue" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"productDetailsSegue" ]) {
-        [[segue destinationViewController] setProduct:selectedProduct];
+        [[segue destinationViewController] setSelectedProduct:self.selectedProduct];
     }
 
 }
